@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  h5 Select your randomization, type the values and let fate decide
+  .row
+    .input-field.col.s4
+      select#randomSelect
+        option(value='', disabled='', selected='') Select ...
+        option(value='rw') Weighted random
+        option(value='rl') Random list
