@@ -4,8 +4,17 @@ block content
   h1= title
   h5 Select your randomization, type the values and let fate decide
   .row
-    .input-field.col.s4
+    .input-field.col.s2
       select#randomSelect
         option(value='', disabled='', selected='') Select ...
         option(value='rw') Weighted random
-        option(value='rl') Random list
+        option(value='rl') List randomization
+
+    .input-field.col.s4#weightedRandom
+      .row.owPair
+        .col.s4
+          input.option(placeholder='Option', type='text')
+        .col.s4
+          input.weight(placeholder='Weight', type='text')
+        .col.s4
+          a.waves-effect.waves-light.btn.blue Add option
