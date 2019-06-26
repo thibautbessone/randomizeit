@@ -1,8 +1,41 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #212121;
+  color: whitesmoke;
 }
 
 a {
   color: #00B7FF;
+}
+
+.row {
+  transition: 2s;
+}
+
+.hiddenPanel {
+  display: none;
+}
+
+.select-wrapper input.select-dropdown {
+  color: whitesmoke;
+}
+
+ul.dropdown-content.select-dropdown li span {
+  color: whitesmoke !important;
+  background-color: #313131;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+  color: #2196F3 !important;
+}
+/* label underline focus color */
+.input-field input:focus {
+  border-bottom: 1px solid #2196F3 !important;
+  box-shadow: 0 1px 0 0 #2196F3 !important;
+}
+
+.option, .weight {
+  color: whitesmoke;
 }

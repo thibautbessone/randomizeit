@@ -6,15 +6,29 @@ block content
   .row
     .input-field.col.s2
       select#randomSelect
-        option(value='', disabled='', selected='') Select ...
+        option(disabled='', selected='') Select ...
         option(value='rw') Weighted random
         option(value='rl') List randomization
 
-    .input-field.col.s4#weightedRandom
+    .input-field.col.s4.hiddenPanel#weightedRandom
       .row.owPair
         .col.s4
           input.option(placeholder='Option', type='text')
         .col.s4
-          input.weight(placeholder='Weight', type='text')
+          input.weight(placeholder='Weight', type='number' min=1)
         .col.s4
-          a.waves-effect.waves-light.btn.blue Add option
+          a.waves-effect.waves-light.btn.blue.newOption Add option
+      .row
+        .col.s4
+        a.waves-effect.waves-light.btn.green.submitOWBtn Pick one !
+
+
+    .input-field.col.s4.hiddenPanel#listRandom
+      .row.listEntry
+        .col.s8
+          input.option(placeholder='Option', type='text')
+        .col.s4
+          a.waves-effect.waves-light.btn.blue.newEntry Add entry
+      .row
+        .col.s4
+        a.waves-effect.waves-light.btn.green.submitListBtn Randomize
