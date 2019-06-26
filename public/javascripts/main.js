@@ -39,7 +39,6 @@ $('#randomSelect').change(function() { // I don't like callbacks
     }
 });
 
-
 $('.newOption').on('click', function () {
     $(this).closest('.row').after(newOptionHtml);
 });
@@ -67,11 +66,39 @@ $('.submitOWBtn').click(function () {
             options: optionsString
         },
         success: function (msg) {
-            alert(msg);
+            let result = JSON.parse(msg);
+            $('#weightedRandomResult').html('Result : ' + result.option.bold());
+            $('#weightedResultCard').fadeIn(animDelay);
         }
     });
 });
 
 $('.submitListBtn').click(function () {
-    alert('lol');
+    let optionsString = '[';
+    $('.listEntry').each(function () {
+        optionsString += '{"option": "' + $(this).find('.option').val() + '"},';
+    });
+    optionsString = optionsString.slice(0, -1) + ']';
+    $.ajax({
+        traditional: true,
+        type: 'POST',
+        url: window.location.pathname + 'random/list',
+        data: {
+            options: optionsString
+        },
+        success: function (msg) {
+            let result = JSON.parse(msg);
+            let tableHtml = '<thead>';
+            result.forEach(function (elem) {
+                let index = 1 + result.findIndex(function (item) { //index starting at 0
+                    return item.option === elem.option;
+                });
+                console.log(elem.option);
+                tableHtml += '<tr><th>' + index + '. ' + elem.option + '</th></tr>';
+            });
+            tableHtml += '</thead>';
+            $('#listResult').html(tableHtml);
+            $('#listResultCard').fadeIn(animDelay);
+        }
+    });
 });

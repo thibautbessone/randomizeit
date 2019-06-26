@@ -39,3 +39,8 @@ ul.dropdown-content.select-dropdown li span {
 .option, .weight {
   color: whitesmoke;
 }
+
+.card-panel {
+  background-color: #313131;
+  text-align: center;
+}
