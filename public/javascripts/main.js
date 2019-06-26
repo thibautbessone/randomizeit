@@ -29,10 +29,12 @@ $(document).ready(function() { // Materialize.css select
 
 $('#randomSelect').change(function() { // I don't like callbacks
     if($("#randomSelect").val() === 'rw') { // Weighted random
+        $('#listResultCard').fadeOut(animDelay);
         $('#listRandom').fadeOut(animDelay, function () {
             $('#weightedRandom').fadeIn(animDelay);
         });
     } else {
+        $('#weightedResultCard').fadeOut(animDelay);
         $('#weightedRandom').fadeOut(animDelay, function () {
             $('#listRandom').fadeIn(animDelay);
         });
