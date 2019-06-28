@@ -42,11 +42,11 @@ $('#randomSelect').change(function() { // I don't like callbacks
 });
 
 $('.newOption').on('click', function () {
-    $(this).closest('.row').after(newOptionHtml);
+    $('.owPair').last().after(newOptionHtml);
 });
 
 $('.newEntry').on('click', function () {
-    $(this).closest('.row').after(newEntryHtml);
+    $('.listEntry').last().after(newEntryHtml);
 });
 
 $('.row').on('click', '.removeBtn', function () {
