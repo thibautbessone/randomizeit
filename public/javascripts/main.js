@@ -6,7 +6,7 @@ const newOptionHtml =
     '    <input class="option" placeholder="Option" type="text" />\n' +
     '  </div>\n' +
     '  <div class="col s4">\n' +
-    '    <input class="weight" placeholder="Weight" type="text" />\n' +
+    '    <input class="weight" placeholder="Weight" type="number" min="1" />\n' +
     '  </div>\n' +
     '  <div class="col s4">\n' +
     '  <a class="waves-effect waves-light btn red removeBtn">Remove</a>\n' +
