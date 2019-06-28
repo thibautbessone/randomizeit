@@ -104,3 +104,8 @@ $('.submitListBtn').click(function () {
         }
     });
 });
+
+$('.resetBtn').click(function () {
+    $('.option').val('');
+    $('.weight').val('');
+});
