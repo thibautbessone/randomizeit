@@ -43,10 +43,12 @@ $('#randomSelect').change(function() { // I don't like callbacks
 
 $('.newOption').on('click', function () {
     $('.owPair').last().after(newOptionHtml);
+    $('.owPair').last().find('.option').focus();
 });
 
 $('.newEntry').on('click', function () {
     $('.listEntry').last().after(newEntryHtml);
+    $('.listEntry').last().find('.option').focus();
 });
 
 $('.row').on('click', '.removeBtn', function () {
